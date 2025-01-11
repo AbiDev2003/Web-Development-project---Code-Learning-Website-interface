@@ -1,0 +1,271 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="about.html">
+<link rel="stylesheet" href="src/output.css">
+
+<title>abicodes.com</title>
+</head>
+
+<body class="bg-slate-900 pt-20">
+
+  <!-- nav bar section starts  -->
+  <nav id="check" class="p-5 bg-slate-400 shadow md:flex md:items-center md:justify-between fixed top-0 left-0 right-0 w-full z-50" id="check">
+    
+    <div class="flex justify-between items-center ">
+      <span class="text-2xl font-[Poppins] cursor-pointer">
+        <img class="h-10 inline mr-4"
+          src="abicodes_logo.jpg">
+          ABICodes
+      </span>
+
+      <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+        <ion-icon id="hamburger" name="menu" onclick="Menu(this)"></ion-icon>
+      </span>
+    </div>
+
+    <ul id="menuOptions" class="md:flex md:items-center z-50 md:z-auto md:static absolute bg-slate-400  w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 ">
+      <li id="home" class="mx-4 my-6 md:my-0">
+        <a href="#" class="text-xl hover:text-blue-800 duration-500">HOME</a>
+      </li>
+      
+      <li id="about" class="mx-4 my-6 md:my-0">
+        <a href="#" class="text-xl hover:text-blue-800 duration-500">ABOUT US</a>
+      </li>
+      <li id="contact" class="mx-4 my-6 md:my-0">
+        <a href="#" class="text-xl hover:text-blue-800 duration-500">CONTACT</a>
+      </li>
+      
+
+      <button id="login" class="bg-blue-800 text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-blue-950 rounded ">
+        LOGIN
+      </button>
+    <h2 class=""></h2>
+    </ul>
+
+    <!-- Login Popup Form -->
+<div id="login-popup" class="fixed hidden inset-0 bg-gray-800 bg-opacity-50  items-center justify-center ">
+    <div class="bg-gray-300 rounded-lg shadow-lg p-8 w-96 relative">
+        <button onclick="closePopup('login-popup')" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">
+            &times;
+        </button>
+        <h2 class="text-2xl font-bold text-center mb-6">Login</h2>
+        <form id="login-form" class="space-y-4">
+            <div>
+                <label for="login-email" class="block text-sm font-medium text-gray-700">Email or Phone:</label>
+                <input type="text" id="login-email" name="email" required
+                class="w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2">
+            </div>
+            <div>
+                <label for="login-password" class="block text-sm font-medium text-gray-700">Password:</label>
+                <input type="password" id="login-password" name="password" required
+                class="w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2">
+            </div>
+            <a href="#" class="text-sm text-blue-500 hover:underline">Forgot password?</a>
+            <button type="submit"
+            class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">Login</button>
+            <p class="text-sm text-center">New user? <a href="#" class="text-blue-500 hover:underline"
+                onclick="openSignup()">Sign up now</a></p>
+            </form>
+        </div>
+</div>
+    
+<!-- Signup Popup Form -->
+<div id="signup-popup" class="fixed inset-0 bg-gray-800 bg-opacity-50 hidden items-center justify-center ">
+    <div class="bg-gray-300 rounded-lg shadow-lg p-8 w-96 relative">
+        <button onclick="closePopup('signup-popup')" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">
+            &times;
+        </button>
+        <h2 class="text-2xl font-bold text-center mb-6">Sign Up</h2>
+        <form id="signup-form" class="space-y-4">
+            <div>
+                <label for="signup-name" class="block text-sm font-medium text-gray-700">Name:</label>
+                <input type="text" id="signup-name" name="name" required
+                class="w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2">
+            </div>
+            <div>
+                <label for="signup-email" class="block text-sm font-medium text-gray-700">Email:</label>
+                <input type="email" id="signup-email" name="email" required
+                class="w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2">
+            </div>
+            <div>
+                <label for="signup-password" class="block text-sm font-medium text-gray-700">Password:</label>
+                <input type="password" id="signup-password" name="password" required
+                    class="w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2">
+            </div>
+            <div>
+                <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required
+                class="w-full mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2">
+            </div>
+            <button type="submit"
+            class="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2">Submit</button>
+        </form>
+    </div>
+</div>
+
+</nav>
+<!-- navbar ends here  -->
+
+
+  <!-- main section starts-->
+<section class="bg-pink-300 p-6 mt- md:p-10 text-center">
+  <h1 class="text-3xl md:text-4xl font-bold mb-4 md:mb-6">Build a successful carrier with</h1>
+  <h2 class="text-5xl md:text-6xl font-bold mb-4 text-gray-700 ">ABICodes</h2>
+</section>
+<!-- main section ends   -->
+
+
+<!-- my intro section starts  -->
+<section class="bg-slate-300 flex justify-center items-center p-6 md:p-10">
+    <div class="bg-gray-400 p-4 md:p-6 rounded-2xl shadow-lg flex items-center flex-col md:flex-row">
+        <div class="mb-4 md:mb-0 md:mr-4">
+            <img class="h-24 w-24 rounded-full"
+            src="abicodes_logo.jpg"
+            alt="Profile Image">
+        </div>
+        <div class="text-center md:text:left">
+            <h2 class="text-xl md:text-2xl font-bold mb-2">Hi, I am <span
+                class="text-blue-700 font-bold">Abinash</span></h2>
+                <p>I'm a Front End Developer who shares programming goodness with the community ❤️</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- our student section  -->
+    <section>
+        <div class="w-full h-auto flex flex-col items-center p-10">
+            <h2 class="text-2xl md:text-3xl text-white flex justify-center items-center">Pure hardwork, no shortcuts!
+            </h2>
+        <div class="h-1 w-36 border-b-4 border-yellow-500 mt-2 md:mt-4 mb-12 rounded-3xl"></div>
+    </div>
+    <div class="flex flex-wrap justify-evenly">
+        <div class="w-46 flex flex-col items-center mb-12">
+            <img class="w-16 h-16 "
+            src="courses.jpg"
+            alt="">
+            <p class="text-2xl text-white font-semibold">600+</p>
+            <p class="text-gray-400 text-xl">Different courses</p>
+        </div>
+        <div class="w-46 flex flex-col items-center mb-12">
+            <img class="w-16 h-16 "
+            src="students.jpg"
+            alt="">
+            <p class="text-2xl text-white font-semibold">700000+</p>
+            <p class="text-gray-400 text-xl">Students Enrolled</p>
+        </div>
+        <div class="w-46 flex flex-col items-center mb-12">
+            <img class="w-16 h-16 "
+            src="success.jpg"
+            alt="">
+            <p class="text-2xl text-white font-semibold">10000+</p>
+            <p class="text-gray-400 text-xl">Successful Transition</p>
+        </div>
+    </div>
+</section>
+<!-- student section ends here  -->
+
+
+<!-- our product section starts  -->
+<section class="w-100 h-auto flex flex-wrap flex-col items-center text-center p-10">
+    <div class="w-full h-auto flex flex-col items-center p-10">
+        <h2 class="text-2xl md:text-3xl text-white flex justify-center items-center">Our products</h2>
+        <div class="h-1 w-36 border-b-4 border-yellow-500 mt-2 md:mt-4 mb-12 rounded-3xl"></div>
+    </div>
+    <div class="w-[90%] h-auto flex flex-wrap justify-around">
+        <div class="w-60 flex flex-col items-center mb-12 border-white border-2 rounded-xl p-3">
+            <img src="abicodes_logo.jpg"
+            alt="">
+            <p class="text-white text-3xl md:font-bold">ABICodes lab</p>
+            <p class="text-gray-500 text-xl md:font-bold">Supercharge your project development with our robust lab</p>
+        </div>
+        <div class="w-60 flex flex-col items-center mb-12  p-3 border-2 border-white rounded-xl">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSnKG9-BWcPLX7aF7s5F44oyGcDqyiuY4GDA&s"
+            alt="">
+            <p class="text-white text-3xl md:font-bold">Job Portal</p>
+            <p class="text-gray-500 text-xl md:font-bold">Use exceptional templated for a standard resume minus the
+                signup process</p>
+            </div>
+            <div class="w-60 flex flex-col items-center mb-12  p-3 border-2 border-white rounded-xl">
+                <img src="https://cdn-icons-png.flaticon.com/512/2274/2274898.png" alt="">
+                <p class="text-white text-3xl md:font-bold">Experience portal</p>
+                <p class="text-gray-500 text-xl md:font-bold">ABICodes self paced experience portal priorities hands on
+                    traning with 5700+ internship projects</p>
+                </div>
+            <div class="w-60 flex flex-col items-center mb-12  p-3 border-2 border-white rounded-xl">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzc9IyYPJ3MUWFhEnWZbQFMYk5BJltkuU-LQ&s"
+                alt="">
+                <p class="text-white text-3xl md:font-bold">Affiliate</p>
+                <p class="text-gray-500 text-xl md:font-bold">Explore affiliate marketing opportunityies with PW Skills
+                    and attain financial freedom.</p>
+                </div>
+                <div class="w-60 flex flex-col items-center mb-12 border-white border-2 rounded-xl p-3">
+                    <img src="https://www.shutterstock.com/image-vector/red-carpet-icon-vector-260nw-443039629.jpg" alt="">
+                    <p class="text-white text-3xl md:font-bold">Hall of fame</p>
+                    <p class="text-gray-500 text-xl md:font-bold">Our student placement and 100k+career transitions spaek
+                        volumes about our courses</p>
+                    </div>
+                </div>
+                
+
+</section>
+
+
+<!-- footer section starts here -->
+<footer id="footerContact" class="text-white w-full bg-gray-900 flex flex-wrap flex-col md:flex-row justify-between md:px-12 pt-6 px-4 items-center">
+    <div class="flex items-center flex-col">
+        <img class="w-20 py-2 "
+        src="abicodes_logo.jpg"
+        alt="">
+        <div id="contactInfo" class=" py-1">
+            <p class="text-white ">For any inquiries, please email us at:</p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=2003abinashdash@gmail.com&su=Inquiry&body=Hello,%20I%20have%20a%20question%20about..."
+            class="text-blue-500 hover:text-blue-700">2003abinashdash@gmail.com</a>
+        </div>
+        <img class="w-20 py-2"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4RSBbHqjB_oWvbHYDc7v9Ern6ypA9292wiw&s"
+        alt="">
+    </div>
+    <div>
+        <h2 class="text-xl font-bold mt-4">ABICodes</h2>
+        <div class="w-32 h-1 border-b-2 border-yellow-500 my-2"></div>
+        <div>
+            <p>About us</p>
+            <p>FAQs</p>
+            <p>Privacy Policy</p>
+        </div>
+    </div>
+    <div>
+        <h2 class="text-xl font-bold mt-4">Products
+        </h2>
+        <div class="w-32 h-1 border-b-2 border-yellow-500 my-2"></div>
+        <div>
+            <p>ABICodes Skills lab</p>
+            <p>Job portal</p>
+            <p>Experience Portal</p>
+            <p>Become an affiliate</p>
+            <p>Hall of fame</p>
+        </div>
+    </div>
+    <div>
+        <h2 class="text-xl font-bold mt-4">Links</h2>
+        <div class="w-32 h-1 border-b-2 border-yellow-500 my-2"></div>
+        <div>
+            <p>Discord Channel</p>
+            <p>Twitter or X</p>
+            <p>Linkedin</p>
+            <p>Youtube channel</p>
+        </div>
+    </div>
+</footer>
+<!-- footer section ends here  -->
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+ <script src="index.js"></script>
+</body>
+
+</html>
